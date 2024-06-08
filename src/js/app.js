@@ -150,10 +150,19 @@ function payEvent() {
     SHOP_HISTORY.saveHistory();
     HTML_HISTORIAL.hasChange = true;
     HTML_HISTORIAL.updateHistoryView(SHOP_HISTORY);
-    alert("Muchas gracias por su compra! 😊");
+   
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Gracias por su compra",
+      showConfirmButton: false,
+      timer: 1500
+    });
+    
     clearCartEvent();
   }
 }
+
 
 function clearCartEvent() {
   CART.removeAll();
